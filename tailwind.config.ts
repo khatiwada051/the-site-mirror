@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -18,6 +19,10 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				'fredoka': ['Fredoka', 'cursive'],
+				'comic': ['Comic Neue', 'cursive'],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -61,7 +66,12 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+				'puppy-orange': '#FF8C42',
+				'puppy-yellow': '#FFD166',
+				'puppy-green': '#06D6A0',
+				'puppy-blue': '#118AB2',
+				'puppy-pink': '#F72585',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -84,11 +94,32 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'bounce-gentle': {
+					'0%, 100%': { transform: 'translateY(0)' },
+					'50%': { transform: 'translateY(-10px)' }
+				},
+				'wiggle': {
+					'0%, 100%': { transform: 'rotate(0deg)' },
+					'25%': { transform: 'rotate(-3deg)' },
+					'75%': { transform: 'rotate(3deg)' }
+				},
+				'float': {
+					'0%, 100%': { transform: 'translateY(0px)' },
+					'50%': { transform: 'translateY(-20px)' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'bounce-gentle': 'bounce-gentle 2s ease-in-out infinite',
+				'wiggle': 'wiggle 1s ease-in-out infinite',
+				'float': 'float 3s ease-in-out infinite'
+			},
+			backgroundImage: {
+				'hero-gradient': 'linear-gradient(135deg, #06D6A0 0%, #118AB2 50%, #0FA96B 100%)',
+				'rescue-gradient': 'linear-gradient(135deg, #FFD166 0%, #FF8C42 100%)',
+				'social-gradient': 'linear-gradient(135deg, #F72585 0%, #FF8C42 100%)',
 			}
 		}
 	},
